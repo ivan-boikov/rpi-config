@@ -2,7 +2,7 @@
 
 apt update
 
-apt install git stow
+apt install git stow gcc
 
 apt install network-manager iptables iptables-persistent hostapd unbound wpasupplicant
 
