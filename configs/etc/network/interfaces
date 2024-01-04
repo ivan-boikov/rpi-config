@@ -1,0 +1,22 @@
+# interfaces(5) file used by ifup(8) and ifdown(8)
+# Include files from /etc/network/interfaces.d:
+source /etc/network/interfaces.d/*
+
+# ethernet, was eth0
+auto enxb827eb55f01a
+allow-hotplug enxb827eb55f01a
+iface enxb827eb55f01a inet static
+	address 192.168.69.1
+
+# ALFA, WAN, was wlan2
+auto wlx00c0cab1a40e
+allow-hotplug wlx00c0cab1a40e
+iface wlx00c0cab1a40e inet dhcp
+	wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
+
+# DEXP, LAN, was wlan 1
+auto wlx00e04c3cc4fc
+allow-hotplug wlx00e04c3cc4fc
+iface wlx00e04c3cc4fc inet static
+	address 192.168.70.1
+	gateway 192.168.69.1

@@ -1,0 +1,15 @@
+[Unit]
+Description=Protonmail Bridge
+After=network.target
+
+[Service]
+ExecStart=/home/proton/proton-bridge/bridge --noninteractive
+User=proton
+Group=proton
+Restart=on-failure
+KillSignal=SIGQUIT
+Type=simple
+NotifyAccess=all
+
+[Install]
+WantedBy=multi-user.target

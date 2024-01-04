@@ -1,0 +1,17 @@
+[Unit]
+Description=Xandikos CalDAV/CardDAV server
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/xandikos \
+  -d /home/dav/.local/share/xandikos \
+  -l 0.0.0.0
+User=dav
+Group=dav
+Restart=on-failure
+KillSignal=SIGQUIT
+Type=simple
+NotifyAccess=all
+
+[Install]
+WantedBy=multi-user.target
